@@ -1,5 +1,8 @@
 # Instagram Collection
 
+* Instagram collection app using React Redux
+* Using [Simple Redux Boilerplate](https://github.com/tsaiDavid/simple-redux-boilerplate)
+
 ## Quickstart
 
 Install required dependencies. 
