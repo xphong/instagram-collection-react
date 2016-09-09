@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from '../actions/CounterActions';
-import Counter from '../components/Counter';
+import * as CollectionActions from '../actions/CollectionActions';
+import CollectionList from '../components/CollectionList';
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
@@ -11,43 +11,43 @@ import Counter from '../components/Counter';
  */
 export class App extends Component {
   render() {
-    const { counter, actions } = this.props;
+    const { collections, actions } = this.props;
     return (
       <div className="main-app-container">
         <div className="main-app-nav">Instagram Collection</div>
-        <Counter counter={counter} actions={actions} />
+        <CollectionList collections={collections} actions={actions} />
       </div>
     );
   }
 }
 
 App.propTypes = {
-  counter: PropTypes.number.isRequired,
+  collections: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 
 /**
  * Keep in mind that 'state' isn't the state of local object, but your single
- * state in this Redux application. 'counter' is a property within our store/state
- * object. By mapping it to props, we can pass it to the child component Counter.
+ * state in this Redux application. 'collections' is a property within our store/state
+ * object. By mapping it to props, we can pass it to the child component CollectionList.
  */
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    collections: state.collections
   };
 }
 
 /**
  * Turns an object whose values are 'action creators' into an object with the same
  * keys but with every action creator wrapped into a 'dispatch' call that we can invoke
- * directly later on. Here we imported the actions specified in 'CounterActions.js' and
+ * directly later on. Here we imported the actions specified in 'CollectionActions.js' and
  * used the bindActionCreators function Redux provides us.
  *
  * More info: http://redux.js.org/docs/api/bindActionCreators.html
  */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(CounterActions, dispatch)
+    actions: bindActionCreators(CollectionActions, dispatch)
   };
 }
 
