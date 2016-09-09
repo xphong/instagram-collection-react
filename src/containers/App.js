@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from '../actions/CounterActions';
 import Counter from '../components/Counter';
-import Footer from '../components/Footer';
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
@@ -17,7 +16,6 @@ export class App extends Component {
       <div className="main-app-container">
         <div className="main-app-nav">Instagram Collection</div>
         <Counter counter={counter} actions={actions} />
-        <Footer />
       </div>
     );
   }
