@@ -15,7 +15,7 @@ import counter from './counter';
  * More info: http://rackt.org/redux/docs/api/combineReducers.html
  */
 const rootReducer = combineReducers({
-  counter, // you might be used to: counter: counter,
+  counter
 });
 
 export default rootReducer;
