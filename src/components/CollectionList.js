@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import CollectionAdd from './CollectionAdd';
-
 export default class CollectionList extends Component {
   constructor(props, context) {
     super(props, context);
@@ -9,9 +7,12 @@ export default class CollectionList extends Component {
 
   render() {
     return (
-      {this.props.collections.map((collection, index) => <p key={index}>{collection.hashtag} <button className="collection-delete-button" onClick={e => {
-        this.props.handleDelete(index)
-      }}>X</button></p>)}
+      <div className="collection-list">
+        <h3>My List</h3>
+        {this.props.collections.map((collection, index) => <p key={index}><button className="collection-list-button">{collection.hashtag} </button><button className="collection-delete-button" onClick={e => {
+          this.props.handleDelete(index)
+        }}>X</button></p>)}
+      </div>
     );
   }
 }

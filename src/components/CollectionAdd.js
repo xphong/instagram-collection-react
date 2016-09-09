@@ -19,12 +19,13 @@ export default class CollectionAdd extends Component {
 
   render() {
     return (
-      <div>
+      <div className="collection-form">
         <form onSubmit={this.handleSubmit.bind(this)} onChange={this.handleInputChange.bind(this)}>
           <label htmlFor="hashtag">Hashtag: </label>
           <input name="hashtag" placeholder="#cats" type="text" required/>
           <div className="collection-buttons">
             <button type="submit">Add to Collection</button>
+            <button type="button">Search Collection</button>
           </div>
         </form>
       </div>

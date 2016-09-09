@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import CollectionAdd from './CollectionAdd';
 import CollectionList from './CollectionList';
 
-export default class CollectionList extends Component {
+export default class Collection extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -19,14 +19,14 @@ export default class CollectionList extends Component {
   render() {
     return (
       <div className="collection-container">
+        <CollectionList collections={this.props.collections} handleDelete={this.handleDelete.bind(this)} />
         <CollectionAdd handleAdd={this.handleAdd.bind(this)} />
-        <CollectionList handleDelete={this.handleDelete.bind(this)} />
       </div>
     );
   }
 }
 
-CollectionList.propTypes = {
+Collection.propTypes = {
   collections: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
