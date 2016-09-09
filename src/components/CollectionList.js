@@ -15,15 +15,15 @@ export default class CollectionList extends Component {
     this.props.actions.deleteCollection(index);
   }
 
-  handleSubmit(event, val) {
-    event.preventDefault();
-    console.log(val);
+  onSubmit(collection) {
+    console.log(collection);
+    this.handleAdd(collection);
   }
 
   render() {
     return (
       <div className="collection-container">
-        <CollectionAdd handleSubmit={this.handleSubmit} />
+        <CollectionAdd onSubmit={this.onSubmit.bind(this)} />
         {this.props.collections.map((collection, index) => <p key={index}>{collection.hashtag} <button onClick={e => {
           this.handleDelete(index)
         }}>X</button></p>)}
