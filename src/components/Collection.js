@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import CollectionAdd from './CollectionAdd';
+import CollectionForm from './CollectionForm';
 import CollectionList from './CollectionList';
 
 export default class Collection extends Component {
@@ -20,7 +20,7 @@ export default class Collection extends Component {
     return (
       <div className="collection-container">
         <CollectionList collections={this.props.collections} handleDelete={this.handleDelete.bind(this)} />
-        <CollectionAdd handleAdd={this.handleAdd.bind(this)} />
+        <CollectionForm handleAdd={this.handleAdd.bind(this)} />
       </div>
     );
   }

@@ -27,6 +27,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 
   &:hover {
     background-color: $accent-gray;
@@ -57,6 +58,7 @@ button {
 
 .collection-list {
   width: 220px;
+
   h3 {
     margin: 0;
   }
@@ -64,6 +66,7 @@ button {
 
 .collection-list-button {
   background: $accent-blue;
+
   &:hover {
     background: $light-blue;
   }
@@ -73,6 +76,7 @@ button {
   background: $accent-red;
   height: 30px;
   width: 30px;
+  
   &:hover {
     background: $light-red;
   }
