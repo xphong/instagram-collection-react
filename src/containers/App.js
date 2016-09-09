@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CollectionActions from '../actions/CollectionActions';
-import CollectionList from '../components/CollectionList';
+import Collection from '../components/Collection';
 
 /**
  * It is common practice to have a 'Root' container/component require our main App (this one).
@@ -15,7 +15,7 @@ export class App extends Component {
     return (
       <div className="main-app-container">
         <div className="main-app-nav">Instagram Collection</div>
-        <CollectionList collections={collections} actions={actions} />
+        <Collection collections={collections} actions={actions} />
       </div>
     );
   }
@@ -29,7 +29,7 @@ App.propTypes = {
 /**
  * Keep in mind that 'state' isn't the state of local object, but your single
  * state in this Redux application. 'collections' is a property within our store/state
- * object. By mapping it to props, we can pass it to the child component CollectionList.
+ * object. By mapping it to props, we can pass it to the child component Collection.
  */
 function mapStateToProps(state) {
   return {

@@ -8,7 +8,7 @@ export default class CollectionAdd extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit(this.state);
+    this.props.handleAdd(this.state);
   }
 
   handleInputChange(event) {

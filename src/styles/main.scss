@@ -6,6 +6,7 @@ $accent-gray: #e1e0dd;
 $accent-black: #35342f;
 $accent-orange: #ec6b2d;
 $accent-red: #dd6464;
+$light-red: #ED8A8A;
 
 body {
   background-color: $main-bg-color;
@@ -13,6 +14,19 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
+}
+
+button {
+  background-color: #CCC;
+  border: none;
+  height: 30px;
+  width: 140px;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  &:hover {
+    background-color: $accent-gray;
+  }
 }
 
 .main-app-container {
@@ -37,22 +51,18 @@ body {
   width: 100%;
 }
 
+.collection-delete-button {
+  background: $accent-red;
+  height: 20px;
+  width: 20px;
+  &:hover {
+    background: $light-red;
+  }
+}
+
 .collection-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3em;
-
-  button {
-    background-color: #CCC;
-    border: none;
-    height: 30px;
-    width: 140px;
-    margin-left: 1em;
-    margin-right: 1em;
-
-    &:hover {
-      background-color: $accent-gray;
-    }
-  }
+  margin-top: 2em;
 }
