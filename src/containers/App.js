@@ -14,7 +14,7 @@ export class App extends Component {
     const { collections, actions } = this.props;
     return (
       <div className="main-app-container">
-        <div className="main-app-nav">Instagram Collection</div>
+        <div className="main-app-nav">Instagram Collections</div>
         <Collection collections={collections} actions={actions} />
       </div>
     );

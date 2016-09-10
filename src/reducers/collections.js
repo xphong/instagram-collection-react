@@ -13,7 +13,7 @@ const INITIAL_STATE = Immutable.List([
 export default function collections(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ADD_COLLECTION:
-    return state.unshift(action.collection);
+      return state.unshift(action.collection);
     case DELETE_COLLECTION:
       return state.filter((collection, index) => index !== action.index);
     default:

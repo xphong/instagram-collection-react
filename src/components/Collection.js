@@ -13,7 +13,9 @@ export default class Collection extends Component {
   }
 
   handleDelete(index) {
-    this.props.actions.deleteCollection(index);
+    if (confirm("Delete this collection?")) {
+      this.props.actions.deleteCollection(index);
+    }
   }
 
   render() {

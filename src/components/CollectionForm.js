@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 
 export default class CollectionForm extends Component {
   constructor(props, context) {
@@ -9,6 +10,7 @@ export default class CollectionForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.handleAdd(this.state);
+    ReactDOM.findDOMNode(this.refs.collectionForm).reset();
   }
 
   handleInputChange(event) {
@@ -20,7 +22,7 @@ export default class CollectionForm extends Component {
   render() {
     return (
       <div className="collection-form">
-        <form onSubmit={this.handleSubmit.bind(this)} onChange={this.handleInputChange.bind(this)}>
+        <form ref="collectionForm" onSubmit={this.handleSubmit.bind(this)} onChange={this.handleInputChange.bind(this)}>
           <label htmlFor="hashtag">Hashtag: </label>
           <input name="hashtag" placeholder="#cats" type="text" required/>
           <div className="collection-buttons">
