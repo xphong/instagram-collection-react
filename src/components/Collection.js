@@ -21,6 +21,7 @@ export default class Collection extends Component {
 
   handleSearch(collection) {
     let url = `${ENDPOINT}${collection.hashtag}/media/recent?access_token=${TOKEN}`;
+    this.props.actions.searchCollection(collection);
     this.props.actions.fetchData(url);
   }
 

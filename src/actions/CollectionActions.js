@@ -16,11 +16,10 @@ export function deleteCollection(index) {
   };
 }
 
-export function addAsync() {
-  return dispatch => {
-    setTimeout(() => {
-      dispatch(addCollection());
-    }, 1000);
+export function searchCollection(collection) {
+  return {
+    type: types.SEARCH_COLLECTION,
+    collection
   };
 }
 

@@ -5,6 +5,18 @@ export default class Media extends Component {
     super(props, context);
   }
 
+  renderTitle() {
+    if (this.props.media.get('collection').size <= 0) {
+      return;
+    }
+
+    return (
+      <div className="media-title">
+        <h2>#{this.props.media.getIn(['collection', 'hashtag'])}</h2>
+      </div>
+    );
+  }
+
   renderMedia() {
     if (this.props.media.get('data').size <= 0) {
       return;
@@ -28,7 +40,7 @@ export default class Media extends Component {
   render() {
     return (
       <div className="media-container">
-        <h2>View</h2>
+        {this.renderTitle()}
         {this.renderMedia()}
       </div>
     )
