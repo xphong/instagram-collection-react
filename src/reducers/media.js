@@ -8,7 +8,7 @@ const INITIAL_STATE = Immutable.fromJS({
   error: false
 });
 
-export default function collections(state = INITIAL_STATE, action) {
+export default function media(state = INITIAL_STATE, action) {
   switch (action.type) {
     case RECEIVE_ERROR:
       return state.mergeDeep({isLoading: false, data: action.data, error: true});
