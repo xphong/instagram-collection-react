@@ -4,9 +4,9 @@ import { ADD_COLLECTION, DELETE_COLLECTION } from '../constants/ActionTypes';
 
 const INITIAL_STATE = Immutable.List([
   {
-    hashtag: '#cats',
-    startDate: '2016-01-01',
-    endDate: '2016-12-31'
+    hashtag: 'cats',
+    startDate: null,
+    endDate: null
   }
 ]);
 
