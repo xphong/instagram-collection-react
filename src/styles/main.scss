@@ -34,79 +34,6 @@ button {
   }
 }
 
-.main-app-container {
-  margin-top: 2em;
-}
-
-.main-app-nav {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-.collection-container {
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  text-align: center;
-}
-
-.collection-form {
-  width: 300px;
-  margin-left: 2em;
-}
-
-.collection-form-input {
-  margin-bottom: 0.5em;
-}
-
-.collection-list {
-  width: 220px;
-
-  h3 {
-    margin: 0;
-  }
-}
-
-.collection-list-button {
-  background: $accent-blue;
-
-  &:hover {
-    background: $light-blue;
-  }
-}
-
-.collection-delete-button {
-  background: $accent-red;
-  height: 30px;
-  width: 30px;
-  
-  &:hover {
-    background: $light-red;
-  }
-}
-
-.collection-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1em;
-}
-
-/* Absolute Center CSS Spinner */
-.loading {
-    position: fixed;
-    z-index: 999;
-    height: 2em;
-    width: 2em;
-    overflow: show;
-    margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 /* Transparent Overlay */
 .loading:before {
     content: '';
@@ -211,4 +138,101 @@ button {
         -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.main-app-container {
+  margin-top: 2em;
+}
+
+.main-app-nav {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.collection-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+}
+
+.collection-form {
+  width: 300px;
+  margin-left: 2em;
+}
+
+.collection-form-input {
+  margin-bottom: 0.5em;
+}
+
+.collection-list {
+  width: 220px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.collection-list-button {
+  background: $accent-blue;
+
+  &:hover {
+    background: $light-blue;
+  }
+}
+
+.collection-delete-button {
+  background: $accent-red;
+  height: 30px;
+  width: 30px;
+  
+  &:hover {
+    background: $light-red;
+  }
+}
+
+.collection-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+/* Absolute Center CSS Spinner */
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.media-container {
+  text-align: center;
+  margin: 2em 0;
+  padding: 0 5em;
+}
+
+.media-item-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.media-item {
+  margin: 1em;
 }
