@@ -5,6 +5,18 @@ export default class Media extends Component {
     super(props, context);
   }
 
+  renderMedia() {
+    if (this.props.media.get('data').size <= 0) {
+      return;
+    }
+
+    return (
+      <div className="media-item-container">
+        {this.props.media.get('data').map(this.renderMediaItem.bind(this))}
+      </div>
+    );
+  }
+
   renderMediaItem(item, index) {
     return (
       <div key={index} className="media-item">
@@ -17,9 +29,7 @@ export default class Media extends Component {
     return (
       <div className="media-container">
         <h2>View</h2>
-        <div className="media-item-container">
-          {this.props.media.get('data').size > 0 ? this.props.media.get('data').map(this.renderMediaItem) : ''}
-        </div>
+        {this.renderMedia()}
       </div>
     )
   }

@@ -5,13 +5,24 @@ export default class CollectionList extends Component {
     super(props, context);
   }
 
+  renderCollectionList() {
+    return this.props.collections.map(this.renderCollectionListItem.bind(this));
+  }
+
+  renderCollectionListItem(collection, index) {
+    return (
+      <p key={index}>
+        <button type="button" className="collection-list-button" onClick={e => {this.props.handleSearch(collection)}}>{collection.hashtag} </button>
+        <button type="button" className="collection-delete-button" onClick={e => {this.props.handleDelete(index)}}>X</button>
+      </p>
+    );
+  }
+
   render() {
     return (
       <div className="collection-list">
         <h3>My Collections</h3>
-        {this.props.collections.map((collection, index) => <p key={index}><button className="collection-list-button">{collection.hashtag} </button><button className="collection-delete-button" onClick={e => {
-          this.props.handleDelete(index)
-        }}>X</button></p>)}
+        {this.renderCollectionList()}
       </div>
     );
   }

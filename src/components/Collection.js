@@ -27,7 +27,7 @@ export default class Collection extends Component {
   render() {
     return (
       <div className="collection-container">
-        <CollectionList collections={this.props.collections} handleDelete={this.handleDelete.bind(this)} />
+        <CollectionList collections={this.props.collections} handleDelete={this.handleDelete.bind(this)} handleSearch={this.handleSearch.bind(this)} />
         <CollectionForm handleAdd={this.handleAdd.bind(this)} handleSearch={this.handleSearch.bind(this)} />
       </div>
     );
