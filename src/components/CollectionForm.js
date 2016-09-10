@@ -8,8 +8,13 @@ export default class CollectionForm extends Component {
   }
 
   handleAdd() {
+    if (!this.state.hashtag) {
+      alert('Please enter a hashtag');
+      return;
+    }
+
     this.props.handleAdd(this.state);
-    ReactDOM.findDOMNode(this.refs.collectionForm).reset();
+    this.resetForm();
   }
 
   handleInputChange(event) {
@@ -21,7 +26,12 @@ export default class CollectionForm extends Component {
   handleSearch(event) {
     event.preventDefault();
     this.props.handleSearch(this.state);
+    this.resetForm();
+  }
+
+  resetForm() {
     ReactDOM.findDOMNode(this.refs.collectionForm).reset();
+    this.state = { hashtag: null, startDate: null, endDate: null };
   }
 
   render() {

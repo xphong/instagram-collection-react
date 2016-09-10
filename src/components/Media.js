@@ -6,25 +6,29 @@ export default class Media extends Component {
   }
 
   renderTitle() {
-    if (this.props.media.get('collection').size <= 0) {
+    const media = this.props.media;
+
+    if (media.get('collection').size <= 0) {
       return;
     }
 
     return (
       <div className="media-title">
-        <h2>#{this.props.media.getIn(['collection', 'hashtag'])}</h2>
+        <h2>#{media.getIn(['collection', 'hashtag'])}</h2>
       </div>
     );
   }
 
   renderMedia() {
-    if (this.props.media.get('data').size <= 0) {
+    const mediaData = this.props.media.get('data');
+
+    if (mediaData.size <= 0) {
       return;
     }
 
     return (
       <div className="media-item-container">
-        {this.props.media.get('data').map(this.renderMediaItem.bind(this))}
+        {mediaData.map(this.renderMediaItem.bind(this))}
       </div>
     );
   }
