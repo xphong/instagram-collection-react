@@ -27,7 +27,9 @@ export function addAsync() {
 export function fetchData(url) {
   return function(dispatch) {
     dispatch(requestData());
-    return fetchJsonp(url)
+    return fetchJsonp(url, {
+      timeout: 20000
+    })
     .then(function(response) {
       return response.json();
     })
