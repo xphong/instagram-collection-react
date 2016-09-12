@@ -19,7 +19,7 @@ export default class Collection extends Component {
   }
 
   handleSearch(collection) {
-    this.props.actions.mediaActions.fetchData(collection);
+    this.props.actions.mediaActions.getMedia(collection);
   }
 
   render() {
