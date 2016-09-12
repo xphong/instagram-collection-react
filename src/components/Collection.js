@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-import { ENDPOINT, TOKEN } from '../constants/AppConstants';
 import CollectionForm from './CollectionForm';
 import CollectionList from './CollectionList';
 
@@ -10,19 +9,17 @@ export default class Collection extends Component {
   }
 
   handleAdd(collection) {
-    this.props.actions.addCollection(collection);
+    this.props.actions.collectionActions.addCollection(collection);
   }
 
   handleDelete(index) {
     if (confirm("Delete this collection?")) {
-      this.props.actions.deleteCollection(index);
+      this.props.actions.collectionActions.deleteCollection(index);
     }
   }
 
   handleSearch(collection) {
-    let url = `${ENDPOINT}${collection.hashtag}/media/recent?access_token=${TOKEN}`;
-    this.props.actions.searchCollection(collection);
-    this.props.actions.fetchData(url);
+    this.props.actions.mediaActions.fetchData(collection);
   }
 
   render() {

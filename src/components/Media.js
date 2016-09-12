@@ -21,8 +21,9 @@ export default class Media extends Component {
 
   renderMedia() {
     const mediaData = this.props.media.get('data');
+    const error = this.props.media.get('error');
 
-    if (mediaData.size <= 0) {
+    if (mediaData.size <= 0 || error) {
       return;
     }
 

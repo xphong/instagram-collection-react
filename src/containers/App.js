@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as CollectionActions from '../actions/CollectionActions';
+import * as MediaActions from '../actions/MediaActions';
 import Collection from '../components/Collection';
 import Media from '../components/Media';
 import Spinner from '../components/Spinner';
@@ -36,7 +37,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(CollectionActions, dispatch)
+    actions: {
+      collectionActions: bindActionCreators(CollectionActions, dispatch),
+      mediaActions: bindActionCreators(MediaActions, dispatch)
+    }
   };
 }
 
