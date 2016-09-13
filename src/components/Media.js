@@ -56,11 +56,13 @@ export default class Media extends Component {
       <div>
         <video className="media-item-video" controls width="320" height="320" src={item.videos ? item.videos.low_resolution.url : ''}>
         </video>
-        <div className="media-item-hover">
-          <p className="media-item-hover-text">{item.user.username}</p>
-          <p className="media-item-hover-text">{itemDate}</p>
-          <p className="media-item-hover-text">&#x2764; {item.likes.count}</p>
-        </div>
+        <a target="_blank" href={item.link}>
+          <div className="media-item-hover">
+            <p className="media-item-hover-text">{item.user.username}</p>
+            <p className="media-item-hover-text">{itemDate}</p>
+            <p className="media-item-hover-text">&#x2764; {item.likes.count}</p>
+          </div>
+        </a>
       </div>
     );
 

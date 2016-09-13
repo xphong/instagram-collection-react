@@ -261,13 +261,13 @@ button {
   height: 320px;
   opacity: 0;
   transition: opacity 500ms;
-
-  .media-item-video + & {
-    height: 285px;
-  }
 }
 
 .media-item-hover-text {
   width: 100%;
   margin: 0 0 0.75em 0;
+}
+
+.media-item-video + a .media-item-hover {
+  height: 285px;
 }
