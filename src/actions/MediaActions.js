@@ -3,6 +3,7 @@ import Immutable from 'immutable';
 
 import * as types from '../constants/ActionTypes';
 import { ENDPOINT, TOKEN } from '../constants/AppConstants';
+import { parseDate } from '../utils/utils';
 
 export function getMedia(collection = {hashtag: 'nalcs2016', startDate: null, endDate: null}) {
   let url = `${ENDPOINT}${collection.hashtag}/media/recent?access_token=${TOKEN}`;
@@ -30,8 +31,8 @@ function fetchData(url, dispatch) {
 }
 
 function fetchDataBetweenDates(url, dispatch, collection) {
-  const startTime = new Date(collection.startDate).getTime();
-  const endTime = new Date(collection.endDate).getTime();
+  const startTime = parseDate(collection.startDate).getTime();
+  const endTime = parseDate(collection.endDate).getTime();
   let mediaItems = [];
 
   function getDataBetweenDatesRecursive(url) {

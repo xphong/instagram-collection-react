@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import { formatDate } from '../utils/utils';
+
 export default class Media extends Component {
   constructor(props, context){
     super(props, context);
@@ -37,9 +39,18 @@ export default class Media extends Component {
   }
 
   renderMediaItem(item, index) {
+    const itemDate = formatDate(parseInt(item.created_time) * 1000);
+
     return (
       <div key={index} className="media-item">
-        <img className="img-responsive" src={item.images.low_resolution.url} />
+        <a target="_blank" href={item.link}>
+          <img className="img-responsive" src={item.images.low_resolution.url} />
+          <div className="media-item-hover">
+            <p className="media-item-hover-text">{item.user.username}</p>
+            <p className="media-item-hover-text">{itemDate}</p>
+            <p className="media-item-hover-text">♥ {item.likes.count}</p>
+          </div>
+        </a>
       </div>
     );
   }

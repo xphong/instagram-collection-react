@@ -234,6 +234,36 @@ button {
 }
 
 .media-item {
+  position: relative;
   margin: 1em;
   cursor: pointer;
+  width: 320px;
+  height: 320px;
+
+  &:hover .media-item-hover  {
+    opacity: 1;
+  }
+}
+
+.media-item-hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 320px;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.media-item-hover-text {
+  width: 100%;
+  margin: 0 0 0.75em 0;
 }
