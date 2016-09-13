@@ -20,6 +20,14 @@ You're now ready to get working! *(enter command or visit via browser directly)*
 open http://localhost:3000/
 ```
 
+## Technologies
+
+* React
+* Redux
+* Webpack
+* Immutable.js
+* Instagram API
+
 ## TODOS
 
 * Unit tests
