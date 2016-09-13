@@ -14,7 +14,7 @@ export default function media(state = INITIAL_STATE, action) {
     case RECEIVE_ERROR:
       return state.mergeDeep({isLoading: false, data: action.data, error: true});
     case RECEIVE_DATA:
-      return state.mergeDeep({isLoading: false, data: action.data, error: false});
+      return state.merge({isLoading: false, error: false}).setIn(['data'], action.data);
     case REQUEST_DATA:
       return state.merge({isLoading: true, error: false, collection: action.collection});
     default:

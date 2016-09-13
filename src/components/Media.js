@@ -7,6 +7,7 @@ export default class Media extends Component {
 
   renderTitle() {
     const media = this.props.media;
+    const isDateSpecified = media.getIn(['collection', 'startDate']) && media.getIn(['collection', 'endDate']);
 
     if (media.get('collection').size <= 0) {
       return;
@@ -15,6 +16,7 @@ export default class Media extends Component {
     return (
       <div className="media-title">
         <h2>#{media.getIn(['collection', 'hashtag'])}</h2>
+        <h3>{isDateSpecified ? `${media.getIn(['collection', 'startDate'])} to ${media.getIn(['collection', 'endDate'])}` : ''}</h3>
       </div>
     );
   }
@@ -37,7 +39,7 @@ export default class Media extends Component {
   renderMediaItem(item, index) {
     return (
       <div key={index} className="media-item">
-        <img className="img-responsive" src={item.getIn(['images', 'low_resolution', 'url'])} />
+        <img className="img-responsive" src={item.images.low_resolution.url} />
       </div>
     );
   }

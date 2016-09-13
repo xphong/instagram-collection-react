@@ -32,25 +32,25 @@ function fetchData(url, dispatch) {
 function fetchDataBetweenDates(url, dispatch, collection) {
   const startTime = new Date(collection.startDate).getTime();
   const endTime = new Date(collection.endDate).getTime();
-  let mediaData = [];
+  let mediaItems = [];
 
-  function getData(url) {
+  function getDataBetweenDatesRecursive(url) {
     return fetchJsonp(url, {timeout: 10000})
     .then(response => response.json())
     .then(response => {
-      let tempData = response.data.filter((val) => {
-        let createdTime = parseInt(val.created_time) * 1000;
+      let itemsWithinDateRange = response.data.filter((item) => {
+        let createdTime = parseInt(item.created_time) * 1000;
 
         return createdTime >= startTime && createdTime <= endTime;
       });
 
-      mediaData = mediaData.concat(tempData);
+      mediaItems = mediaItems.concat(itemsWithinDateRange);
 
       if (response.pagination.next_url) {
-        getData(response.pagination.next_url);
+        getDataBetweenDatesRecursive(response.pagination.next_url);
       }
       else {
-        dispatch(receiveData(mediaData));
+        dispatch(receiveData(mediaItems));
       }
     })
     .catch(error => {
@@ -58,7 +58,7 @@ function fetchDataBetweenDates(url, dispatch, collection) {
     });
   }
 
-  getData(url);
+  getDataBetweenDatesRecursive(url);
 }
 
 function requestData(collection) {

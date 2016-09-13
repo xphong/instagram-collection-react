@@ -10,10 +10,18 @@ export default class CollectionList extends Component {
   }
 
   renderCollectionListItem(collection, index) {
+    const isDateSpecified = collection.startDate && collection.endDate;
+    const listButtonStyle = {
+      width: isDateSpecified ? '240px' : ''
+    };
+
     return (
       <p key={index}>
-        <button type="button" className="collection-list-button" onClick={e => {this.props.handleSearch(collection)}}>{collection.hashtag} </button>
-        <button type="button" className="collection-delete-button" onClick={e => {this.props.handleDelete(index)}}>X</button>
+        <button type="button" className="collection-list-button" style={listButtonStyle} onClick={e => {this.props.handleSearch(collection)}}>
+        {collection.hashtag}
+        {isDateSpecified ? ` [${collection.startDate} to ${collection.endDate}]` : ''}
+        </button>
+        <button type="button" className="collection-delete-button" onClick={e => {this.props.handleDelete(index)}}> X</button>
       </p>
     );
   }
