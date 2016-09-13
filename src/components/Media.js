@@ -47,7 +47,7 @@ export default class Media extends Component {
         <div className="media-item-hover">
           <p className="media-item-hover-text">{item.user.username}</p>
           <p className="media-item-hover-text">{itemDate}</p>
-          <p className="media-item-hover-text">♥ {item.likes.count}</p>
+          <p className="media-item-hover-text">&#x2764; {item.likes.count}</p>
         </div>
       </a>
      );
@@ -59,7 +59,7 @@ export default class Media extends Component {
         <div className="media-item-hover">
           <p className="media-item-hover-text">{item.user.username}</p>
           <p className="media-item-hover-text">{itemDate}</p>
-          <p className="media-item-hover-text">♥ {item.likes.count}</p>
+          <p className="media-item-hover-text">&#x2764; {item.likes.count}</p>
         </div>
       </div>
     );
