@@ -261,6 +261,10 @@ button {
   height: 320px;
   opacity: 0;
   transition: opacity 500ms;
+
+  .media-item-video + & {
+    height: 285px;
+  }
 }
 
 .media-item-hover-text {

@@ -41,16 +41,32 @@ export default class Media extends Component {
   renderMediaItem(item, index) {
     const itemDate = formatDate(parseInt(item.created_time) * 1000);
 
+    const displayImage = (
+      <a target="_blank" href={item.link}>
+        <img className="img-responsive" src={item.images.low_resolution.url} />
+        <div className="media-item-hover">
+          <p className="media-item-hover-text">{item.user.username}</p>
+          <p className="media-item-hover-text">{itemDate}</p>
+          <p className="media-item-hover-text">♥ {item.likes.count}</p>
+        </div>
+      </a>
+     );
+
+    const displayVideo = (
+      <div>
+        <video className="media-item-video" controls width="320" height="320" src={item.videos ? item.videos.low_resolution.url : ''}>
+        </video>
+        <div className="media-item-hover">
+          <p className="media-item-hover-text">{item.user.username}</p>
+          <p className="media-item-hover-text">{itemDate}</p>
+          <p className="media-item-hover-text">♥ {item.likes.count}</p>
+        </div>
+      </div>
+    );
+
     return (
       <div key={index} className="media-item">
-        <a target="_blank" href={item.link}>
-          <img className="img-responsive" src={item.images.low_resolution.url} />
-          <div className="media-item-hover">
-            <p className="media-item-hover-text">{item.user.username}</p>
-            <p className="media-item-hover-text">{itemDate}</p>
-            <p className="media-item-hover-text">♥ {item.likes.count}</p>
-          </div>
-        </a>
+        {item.type === 'video' ? displayVideo : displayImage}
       </div>
     );
   }
