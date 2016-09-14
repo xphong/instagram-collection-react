@@ -39,21 +39,15 @@ function fetchDataBetweenDates(url, dispatch, collection) {
     return fetchJsonp(url, {timeout: 10000})
     .then(response => response.json())
     .then(response => {
-      let continueRecursion = true;
-
       let itemsWithinDateRange = response.data.filter((item) => {
         let createdTime = parseInt(item.created_time) * 1000;
-
-        if (startTime >= createdTime) {
-          continueRecursion = false;
-        }
 
         return createdTime >= startTime && createdTime <= endTime;
       });
 
       mediaItems = mediaItems.concat(itemsWithinDateRange);
 
-      if (response.pagination.next_url && continueRecursion) {
+      if (response.pagination.next_url) {
         getDataBetweenDatesRecursive(response.pagination.next_url);
       }
       else {
