@@ -6,12 +6,13 @@ import { ENDPOINT, TOKEN } from '../constants/AppConstants';
 import { parseDate } from '../utils/utils';
 
 export function getMedia(collection = {hashtag: 'nalcs2016', startDate: null, endDate: null}) {
+  const isDateSpecified = collection.startDate && collection.endDate;
   let url = `${ENDPOINT}${collection.hashtag}/media/recent?access_token=${TOKEN}`;
 
   return (dispatch, getStore) => {
     dispatch(requestData(collection));
 
-    if (collection.startDate && collection.endDate) {
+    if (isDateSpecified) {
       return fetchDataBetweenDates(url, dispatch, collection);
     }
 

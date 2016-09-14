@@ -59,7 +59,7 @@ export default class Media extends Component {
 
     const displayImage = (
       <a target="_blank" href={item.link}>
-        <img className="img-responsive" src={item.images.low_resolution.url} />
+        <img className="img-responsive" src={item.images ? item.images.low_resolution.url : ''} />
         <div className="media-item-hover">
           <p className="media-item-hover-text">{item.user.username}</p>
           <p className="media-item-hover-text">{itemDate}</p>
@@ -70,7 +70,9 @@ export default class Media extends Component {
 
     const displayVideo = (
       <div>
-        <video className="media-item-video" controls width="320" height="320" src={item.videos ? item.videos.low_resolution.url : ''}>
+        <video className="media-item-video"
+               src={item.videos ? item.videos.low_resolution.url : ''}
+               controls width="320" height="320" >
         </video>
         <a target="_blank" href={item.link}>
           <div className="media-item-hover">

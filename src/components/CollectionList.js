@@ -17,11 +17,18 @@ export default class CollectionList extends Component {
 
     return (
       <p key={index}>
-        <button type="button" className="collection-list-button" style={listButtonStyle} onClick={e => {this.props.handleSearch(collection)}}>
-        {collection.hashtag}
-        {isDateSpecified ? ` [${collection.startDate} to ${collection.endDate}]` : ''}
+        <button type="button"
+                className="collection-list-button"
+                style={listButtonStyle}
+                onClick={e => {this.props.handleSearch(collection)}}>
+
+          {collection.hashtag}
+          {isDateSpecified ? ` [${collection.startDate} to ${collection.endDate}]` : ''}
         </button>
-        <button type="button" className="collection-delete-button" onClick={e => {this.props.handleDelete(index)}}> X</button>
+        <button type="button"
+                className="collection-delete-button"
+                onClick={e => {this.props.handleDelete(index)}}> X</button>
+
       </p>
     );
   }

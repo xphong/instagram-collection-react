@@ -43,7 +43,10 @@ export default class CollectionForm extends Component {
   render() {
     return (
       <div className="collection-form">
-        <form ref="collectionForm" onSubmit={this.handleSearch.bind(this)} onChange={this.handleInputChange.bind(this)}>
+        <form ref="collectionForm"
+              onSubmit={this.handleSearch.bind(this)}
+              onChange={this.handleInputChange.bind(this)}>
+
           <div className="collection-form-input">
             <label htmlFor="hashtag">*Hashtag: </label>
             <input name="hashtag" placeholder="nalcs2016" type="text"/>
