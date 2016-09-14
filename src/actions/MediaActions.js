@@ -57,7 +57,12 @@ function fetchDataBetweenDates(url, dispatch, collection) {
         getDataBetweenDatesRecursive(response.pagination.next_url);
       }
       else {
-        dispatch(receiveData(mediaItems));
+        if (mediaItems.length > 0) {
+          dispatch(receiveData(mediaItems));
+        }
+        else {
+          dispatch(receiveError([]));
+        }
       }
     })
     .catch(error => {

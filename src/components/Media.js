@@ -26,8 +26,24 @@ export default class Media extends Component {
   renderMedia() {
     const mediaData = this.props.media.get('data');
     const error = this.props.media.get('error');
+    let errorMsg = '';
 
-    if (mediaData.size <= 0 || error) {
+    if (error) {
+      if (mediaData.message) {
+        errorMsg = mediaData.message;
+      }
+      else if (mediaData.size <= 0) {
+        errorMsg = 'No posts found.';
+      }
+
+      return (
+        <div className="media-error-message">
+          {errorMsg}
+        </div>
+      );
+    }
+
+    if (mediaData.size <= 0) {
       return;
     }
 
