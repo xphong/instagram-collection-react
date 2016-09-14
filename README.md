@@ -31,7 +31,7 @@ open http://localhost:3000/
 ## TODOS
 
 * Unit tests
-* Handle errors
+* Better functionality to find data between dates
 * Validation
 * Store collections in local storage
 * Load More button
