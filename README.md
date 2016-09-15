@@ -32,6 +32,7 @@ open http://localhost:3000/
 
 * Unit tests
 * Better functionality to find data between dates
+* Cache collection calls
 * Validation
 * Store collections in local storage
 * Load More button
