@@ -72,19 +72,19 @@ function requestData(collection) {
   return {
     type: types.REQUEST_DATA,
     collection
-  }
+  };
 }
 
 function receiveData(data) {
   return{
     type: types.RECEIVE_DATA,
     data
-  }
+  };
 }
 
 function receiveError(data) {
   return {
     type: types.RECEIVE_ERROR,
     data
-  }
+  };
 }

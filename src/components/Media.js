@@ -99,7 +99,7 @@ export default class Media extends Component {
       </div>
     )
   }
-};
+}
 
 Media.propTypes = {
   media: PropTypes.object.isRequired
