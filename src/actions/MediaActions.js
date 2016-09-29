@@ -51,9 +51,6 @@ function fetchDataBetweenDates(url, dispatch, collection) {
           return;
         }
 
-        console.log('craetedTime', createdTime);
-        console.log('endTime', endTime);
-
         return createdTime >= startTime && createdTime <= endTime;
       });
 
