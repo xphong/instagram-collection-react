@@ -31,11 +31,10 @@ open http://localhost:3000/
 ## TODOS
 
 * Unit tests
-* Better functionality to find data between dates
 * Cache collection calls
 * Validation
 * Store collections in local storage
-* Load More button
+* Load More button/Pagination
 * Separate SCSS into components
 * Scroll to top button
 
