@@ -7,6 +7,13 @@ export default class CollectionForm extends Component {
     this.state = { hashtag: null, startDate: null, endDate: null };
   }
 
+  handleSpacesOnKeypress(event) {
+    if (event.which === 32) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
   handleAdd() {
     if (!this.state.hashtag) {
       alert('Please enter a hashtag');
@@ -49,7 +56,7 @@ export default class CollectionForm extends Component {
 
           <div className="collection-form-input">
             <label htmlFor="hashtag">*Hashtag: </label>
-            <input name="hashtag" placeholder="nalcs2016" type="text"/>
+            <input name="hashtag" placeholder="nalcs2016" type="text" onKeyPress={this.handleSpacesOnKeypress}/>
           </div>
           <div className="collection-form-input">
             <label htmlFor="startDate">Start Date: </label>
