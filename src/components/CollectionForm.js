@@ -44,6 +44,7 @@ export default class CollectionForm extends Component {
 
   resetForm() {
     ReactDOM.findDOMNode(this.refs.collectionForm).reset();
+    ReactDOM.findDOMNode(this.refs.hashtag).focus();
     this.state = { hashtag: null, startDate: null, endDate: null };
   }
 
@@ -56,7 +57,11 @@ export default class CollectionForm extends Component {
 
           <div className="collection-form-input">
             <label htmlFor="hashtag">*Hashtag: </label>
-            <input name="hashtag" placeholder="nalcs2016" type="text" onKeyPress={this.handleSpacesOnKeypress}/>
+            <input ref="hashtag"
+                   name="hashtag"
+                   placeholder="nalcs2016"
+                   type="text"
+                   onKeyPress={this.handleSpacesOnKeypress}/>
           </div>
           <div className="collection-form-input">
             <label htmlFor="startDate">Start Date: </label>
