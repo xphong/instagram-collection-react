@@ -1,6 +1,7 @@
 # Instagram Collection
 
 * Instagram collection app using React Redux
+* Demo: [https://xphong.github.io/instagram-collection-react/](https://xphong.github.io/instagram-collection-react/)
 * Using [Simple Redux Boilerplate](https://github.com/tsaiDavid/simple-redux-boilerplate)
 
 ## Quickstart
